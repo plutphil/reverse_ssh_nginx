@@ -1,0 +1,28 @@
+name: Reverse SSH Tunnel with NGINX
+description: Reverse SSH tunnel exposing Home Assistant via NGINX over HTTPS
+version: "1.0.1"
+slug: reverse_ssh_nginx
+#startup: services
+#boot: auto
+#host_network: false
+#ingress: false
+#panel_icon: mdi:ssh
+options:
+  remote_host: example.com
+  remote_user: user
+  remote_port: 8443
+schema:
+  remote_host: str
+  remote_user: str
+  remote_port: int
+map:
+  - config:rw
+ports:
+  14443/tcp: 443
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
